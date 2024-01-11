@@ -27,11 +27,7 @@ const LinkyByUsername = () => {
     return <div></div>;
   }
   if (!links) {
-    return (
-      <div className="d-flex justify-content-center m-5">
-        Uh-oh! That user does not exist
-      </div>
-    );
+    return <div>Uh-oh! That user does not exist</div>;
   }
 
   const updateCounter = (link_id, newCount) => {
@@ -41,12 +37,12 @@ const LinkyByUsername = () => {
 
   return (
     <>
-      <div className="d-flex justify-content-center mb-5 pb-5">
-        <div className="m-5 pt-5 ">
-          <div className="d-flex justify-content-center">
+      <div>
+        <div>
+          <div>
             <h2>@{username}</h2>
           </div>
-          <table className="mt-5 justify-content-center">
+          <table>
             <tbody>
               {links.map((link) => {
                 if (!link.locked) {
@@ -54,15 +50,13 @@ const LinkyByUsername = () => {
                     <tr key={link.link_id}>
                       <td>
                         <div
-                          className="card d-flex justify-content-center"
                           style={{
                             width: "30rem",
                           }}
                         >
-                          <div className="row">
-                            <div className="card-body d-flex justify-content-center">
+                          <div>
+                            <div>
                               <Link
-                                className="link stretched-link"
                                 to={link.link}
                                 target="_blank"
                                 onClick={() => {
@@ -82,7 +76,7 @@ const LinkyByUsername = () => {
             </tbody>
           </table>
         </div>
-        <div className="small-spacer"></div>
+        <div></div>
       </div>
     </>
   );

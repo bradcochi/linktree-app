@@ -34,7 +34,7 @@ const NavBar = () => {
           <span></span>
         </button>
         <div id="navbarSupportedContent">
-          <ul>
+          <ul className="flex">
             {account && (
               <>
                 <li>
