@@ -3,6 +3,7 @@ import { Link, NavLink, useNavigate } from "react-router-dom";
 import { useGetAccountQuery, useLogoutMutation } from "../app/apiSlice";
 import LoginForm from "./LoginForm";
 import AlertSuccess from "./AlertSuccess";
+import { Button } from "../components/Button";
 
 const NavBar = () => {
   const { data: account, isLoading } = useGetAccountQuery();
@@ -23,22 +24,14 @@ const NavBar = () => {
     <nav>
       <div>
         <Link to="/">Linky</Link>
-        <button
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarSupportedContent"
-          aria-controls="navbarSupportedContent"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span></span>
-        </button>
-        <div id="navbarSupportedContent">
+        <div>
           <ul className="flex">
             {account && (
               <>
                 <li>
-                  <NavLink to="/">Edit Links</NavLink>
+                  <NavLink to="/">
+                    <Button>Edit Links</Button>
+                  </NavLink>
                 </li>
                 <li>
                   <Link to={`/${account.username}`}>View My Linky</Link>
