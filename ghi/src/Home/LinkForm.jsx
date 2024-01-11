@@ -33,17 +33,16 @@ function LinkForm() {
   }
 
   return (
-    <div className="container m">
-      <div className="row gx-5">
-        <div className="col">
-          <div className="">
-            <div className="card me-4">
-              <div className="card-body">
-                <p className="h4">Enter Link</p>
+    <div>
+      <div>
+        <div>
+          <div>
+            <div>
+              <div>
+                <p>Enter Link</p>
                 <form onSubmit={handleSubmit} id="review-form">
-                  <div className="">
+                  <div>
                     <input
-                      className="form-control"
                       onChange={handleNameChange}
                       placeholder="Name"
                       name="review"
@@ -51,9 +50,8 @@ function LinkForm() {
                       value={name}
                     ></input>
                   </div>
-                  <div className="mb-3">
+                  <div>
                     <input
-                      className="form-control"
                       onChange={handleLinkChange}
                       placeholder="Copy & paste URL here"
                       name="link"
@@ -62,10 +60,8 @@ function LinkForm() {
                       value={link}
                     ></input>
                   </div>
-                  <div className="mb-3">
-                    <button disabled={isDisabled} className="btn btn-primary">
-                      Submit
-                    </button>
+                  <div>
+                    <button disabled={isDisabled}>Submit</button>
                   </div>
                 </form>
               </div>

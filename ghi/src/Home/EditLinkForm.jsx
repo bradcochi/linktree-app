@@ -46,12 +46,11 @@ function EditLinkForm({ linkToEdit, isSubmitted }) {
   });
 
   return (
-    <div className="card-body">
-      <p className="h4">Edit Link</p>
+    <div>
+      <p>Edit Link</p>
       <form onSubmit={handleSubmit} id="review-form">
-        <div className="">
+        <div>
           <input
-            className="form-control"
             onChange={handleNameChange}
             placeholder="Name"
             name="name"
@@ -59,9 +58,8 @@ function EditLinkForm({ linkToEdit, isSubmitted }) {
             value={name}
           ></input>
         </div>
-        <div className="mb-3">
+        <div>
           <input
-            className="form-control"
             onChange={handleLinkChange}
             placeholder="Copy & paste URL here"
             name="link"
@@ -71,7 +69,7 @@ function EditLinkForm({ linkToEdit, isSubmitted }) {
           ></input>
         </div>
 
-        <div className="mb-3">
+        <div>
           <button
             type="button"
             className={hideClass}
@@ -80,7 +78,7 @@ function EditLinkForm({ linkToEdit, isSubmitted }) {
           >
             {hidden}
           </button>
-          <button className="btn btn-primary">Save</button>
+          <button>Save</button>
         </div>
       </form>
     </div>

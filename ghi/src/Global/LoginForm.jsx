@@ -36,22 +36,20 @@ function LoginForm() {
   };
 
   return (
-    <div className="card-body">
-      <p className="h4"></p>
+    <div>
+      <p></p>
       <form onSubmit={handleSubmit} id="review-form">
         {errorMessage && <AlertError>{errorMessage}</AlertError>}
-        <div className="mb-3">
+        <div>
           <input
-            className="form-control"
             onChange={handleNameChange}
             placeholder="Username"
             name="username"
             id="username"
           ></input>
         </div>
-        <div className="mb-3">
+        <div>
           <input
-            className="form-control"
             onChange={handleLinkChange}
             placeholder="Password"
             name="link"
@@ -59,8 +57,8 @@ function LoginForm() {
             type="password"
           ></input>
         </div>
-        <div className="mb-3">
-          <button className="btn btn-primary">Login</button>
+        <div>
+          <button>Login</button>
         </div>
       </form>
     </div>

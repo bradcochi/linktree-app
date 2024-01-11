@@ -8,15 +8,14 @@ function EditLinkCard({ linkToEdit }) {
 
   return (
     <>
-      <div className="card w-75 mb-3">
-        <div className="card-body">
+      <div>
+        <div>
           {!isEditable && (
             <>
-              <h5 className="card-title">{linkToEdit.name}</h5>
-              <p className="card-text">{linkToEdit.link}</p>
+              <h5>{linkToEdit.name}</h5>
+              <p>{linkToEdit.link}</p>
               <button
                 type="button"
-                className="btn btn-primary"
                 onClick={() => {
                   setEditable(!isEditable);
                 }}
@@ -24,10 +23,7 @@ function EditLinkCard({ linkToEdit }) {
                 Edit
               </button>
 
-              <button
-                className="btn shadow btn-outline-primary"
-                onClick={() => deleteLink(linkToEdit.link_id)}
-              >
+              <button onClick={() => deleteLink(linkToEdit.link_id)}>
                 Delete
               </button>
             </>

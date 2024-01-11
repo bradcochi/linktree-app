@@ -16,18 +16,15 @@ const HomePage = () => {
   }
 
   return (
-    <div className="m-5 d-flex flex-row justify-content-around">
-      <div className="flex-grow">
-        <div className="flex-grow-1 row">
+    <div>
+      <div>
+        <div>
           <LinkForm></LinkForm>
         </div>
-        <div className="row pt-4">
+        <div>
           {links?.map((link) => {
             return (
-              <div
-                className="d-flex justify-content-center pe-4"
-                key={link.link_id}
-              >
+              <div key={link.link_id}>
                 <EditLinkCard linkToEdit={link}></EditLinkCard>
               </div>
             );
@@ -35,7 +32,7 @@ const HomePage = () => {
         </div>
       </div>
       <div>
-        <div className="flex-fill ">
+        <div>
           <LinksPreview></LinksPreview>
         </div>
       </div>
