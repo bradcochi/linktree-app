@@ -23,59 +23,76 @@ const NavBar = () => {
   return (
     <nav>
       <div>
-        <Link to="/">Linky</Link>
         <div>
-          <ul className="flex">
-            {account && (
-              <>
-                <li>
-                  <NavLink to="/">
-                    <Button>Edit Links</Button>
-                  </NavLink>
-                </li>
-                <li>
-                  <Link to={`/${account.username}`}>View My Linky</Link>
-                </li>
-                <li>
-                  <Link to="analytics">Analytics</Link>
-                </li>
-                <li>
-                  <button
-                    id="liveAlertBtn"
-                    onClick={() => {
-                      navigator.clipboard.writeText(
-                        `http://localhost:3000/${account.username}`
-                      );
-                      setSuccessAlert(true);
-                    }}
-                  >
-                    Share
-                  </button>
-                  {successAlert && <AlertSuccess></AlertSuccess>}
-                </li>
-                <li>
-                  <button onClick={logoutAndRedirect}>Logout</button>
-                </li>
-              </>
-            )}
+          <ul className="flex justify-between">
+            <div className="flex">
+              <Button asChild variant="ghost">
+                <NavLink to="/">Linky</NavLink>
+              </Button>
+              {account && (
+                <>
+                  <li>
+                    <Button asChild variant="ghost">
+                      <NavLink to="/">Edit Links</NavLink>
+                    </Button>
+                  </li>
+                  <li>
+                    <Button asChild variant="ghost">
+                      <NavLink to={`/${account.username}`}>
+                        View My Linky
+                      </NavLink>
+                    </Button>
+                  </li>
+                  <li>
+                    <Button asChild variant="ghost">
+                      <NavLink to="analytics">Analytics</NavLink>
+                    </Button>
+                  </li>
+                  <li>
+                    <Button
+                      variant="ghost"
+                      id="liveAlertBtn"
+                      onClick={() => {
+                        navigator.clipboard.writeText(
+                          `http://localhost:3000/${account.username}`
+                        );
+                        setSuccessAlert(true);
+                      }}
+                    >
+                      Share
+                    </Button>
+                    {successAlert && <AlertSuccess></AlertSuccess>}
+                  </li>
+                </>
+              )}
+            </div>
 
-            {!account && (
-              <>
+            <div className="flex">
+              {account && (
                 <li>
-                  <NavLink to="signup">Sign Up</NavLink>
+                  <Button onClick={logoutAndRedirect}>Logout</Button>
                 </li>
-                <li>
-                  <button
-                    type="button"
-                    data-bs-toggle="modal"
-                    data-bs-target="#staticBackdrop"
-                  >
-                    Login
-                  </button>
-                </li>
-              </>
-            )}
-            <div
+              )}
+
+              {!account && (
+                <>
+                  <li>
+                    <Button asChild>
+                      <NavLink to="signup">Sign Up</NavLink>
+                    </Button>
+                  </li>
+                  <li>
+                    <Button
+                    // data-bs-toggle="modal"
+                    // data-bs-target="#staticBackdrop"
+                    >
+                      Login
+                    </Button>
+                  </li>
+                </>
+              )}
+            </div>
+            {/* <div
               id="staticBackdrop"
               data-bs-backdrop="static"
               data-bs-keyboard="false"
@@ -101,7 +118,7 @@ const NavBar = () => {
                   </div>
                 </div>
               </div>
-            </div>
+            </div> */}
           </ul>
         </div>
       </div>
