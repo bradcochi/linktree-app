@@ -4,7 +4,7 @@ import { useGetAccountQuery, useLogoutMutation } from "../app/apiSlice";
 import LoginForm from "./LoginForm";
 import AlertSuccess from "./AlertSuccess";
 import { Button } from "../components/Button";
-import LinkyLogo from "../Images/logo-512x512.png";
+// import LinkyLogo from "../../public/logo-512x512.png";
 
 const NavBar = () => {
   const { data: account, isLoading } = useGetAccountQuery();
@@ -24,14 +24,10 @@ const NavBar = () => {
   return (
     <nav className="sticky top-0 left-0 right-0 z-[100]">
       <div className="px-24 pt-[var(--header-padding)]">
-        <ul className="flex justify-between items-center bg-white rounded-full p-3">
+        <ul className="flex justify-between items-center bg-white rounded-full p-3 pl-5">
           <div className="flex items-center">
             <NavLink to="/" className="mr-2">
-              <img
-                src={LinkyLogo}
-                className="h-[62px] rounded-full"
-                alt="..."
-              />
+              <img src="/logo-512x512.png" className="h-10" alt="..." />
             </NavLink>
             {account && (
               <>
