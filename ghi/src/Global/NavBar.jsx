@@ -76,12 +76,7 @@ const NavBar = () => {
             {!account && (
               <div className="flex gap-2">
                 <li>
-                  <Button
-                    variant="secondary"
-                    size="lg"
-                    // data-bs-toggle="modal"
-                    // data-bs-target="#staticBackdrop"
-                  >
+                  <Button variant="secondary" size="lg">
                     Log in
                   </Button>
                 </li>
