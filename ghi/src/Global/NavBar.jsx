@@ -1,10 +1,9 @@
-import { React, useEffect, useState } from "react";
-import { Link, NavLink, useNavigate } from "react-router-dom";
+import { React, useState } from "react";
+import { NavLink, useNavigate } from "react-router-dom";
 import { useGetAccountQuery, useLogoutMutation } from "../app/apiSlice";
 import LoginForm from "./LoginForm";
 import AlertSuccess from "./AlertSuccess";
 import { Button } from "../components/Button";
-// import LinkyLogo from "../../public/logo-512x512.png";
 
 const NavBar = () => {
   const { data: account, isLoading } = useGetAccountQuery();
