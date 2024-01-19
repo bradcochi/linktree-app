@@ -4,6 +4,7 @@ import { useGetAccountQuery, useLogoutMutation } from "../app/apiSlice";
 import LoginForm from "./LoginForm";
 import AlertSuccess from "./AlertSuccess";
 import { Button } from "../components/Button";
+import LinkyLogo from "../Images/logo-512x512.png";
 
 const NavBar = () => {
   const { data: account, isLoading } = useGetAccountQuery();
@@ -22,12 +23,16 @@ const NavBar = () => {
 
   return (
     <nav className="sticky top-0 left-0 right-0 z-[100]">
-      <div className="px-24 pt-12">
-        <ul className="flex justify-between bg-white rounded-full p-3">
-          <div className="flex">
-            <Button asChild variant="ghost">
-              <NavLink to="/">Linky</NavLink>
-            </Button>
+      <div className="px-24 pt-[var(--header-padding)]">
+        <ul className="flex justify-between items-center bg-white rounded-full p-3">
+          <div className="flex items-center">
+            <NavLink to="/" className="mr-2">
+              <img
+                src={LinkyLogo}
+                className="h-[62px] rounded-full"
+                alt="..."
+              />
+            </NavLink>
             {account && (
               <>
                 <li>
@@ -67,28 +72,30 @@ const NavBar = () => {
           <div className="flex">
             {account && (
               <li>
-                <Button className="rounded-full" onClick={logoutAndRedirect}>
+                <Button size="rounded" onClick={logoutAndRedirect}>
                   Logout
                 </Button>
               </li>
             )}
 
             {!account && (
-              <>
-                <li>
-                  <Button asChild>
-                    <NavLink to="signup">Sign Up</NavLink>
-                  </Button>
-                </li>
+              <div className="flex gap-2">
                 <li>
                   <Button
-                  // data-bs-toggle="modal"
-                  // data-bs-target="#staticBackdrop"
+                    variant="secondary"
+                    size="lg"
+                    // data-bs-toggle="modal"
+                    // data-bs-target="#staticBackdrop"
                   >
-                    Login
+                    Log in
                   </Button>
                 </li>
-              </>
+                <li>
+                  <Button size="rounded" asChild>
+                    <NavLink to="signup">Sign up free</NavLink>
+                  </Button>
+                </li>
+              </div>
             )}
           </div>
           {/* <div

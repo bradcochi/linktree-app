@@ -1,4 +1,3 @@
-import LinkyLogo from "../Images/logo-512x512.png";
 import { NavLink } from "react-router-dom";
 import LoginForm from "../Global/LoginForm";
 
@@ -6,7 +5,6 @@ const LandingPage = ({ account }) => {
   return (
     <>
       <div>
-        <img src={LinkyLogo} alt="..." />
         <h1>Welcome to Linky!</h1>
         <div>
           <div></div>
