@@ -11,16 +11,18 @@ function App() {
   // const domain = /https:\/\/[^/]+/;
   // const basename = process.env.PUBLIC_URL.replace(domain, "");
   return (
-    <BrowserRouter>
-      <NavBar />
-      <Routes>
-        <Route path="/" element={<HomePage />} />
-        <Route path="signup" element={<SignUp />} />
-        <Route path=":username" element={<LinkyByUsername />} />
-        <Route path="analytics" element={<Analytics />} />
-      </Routes>
-      <Footer />
-    </BrowserRouter>
+    <div className="bg-[#F3F3F1]">
+      <BrowserRouter>
+        <NavBar />
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="signup" element={<SignUp />} />
+          <Route path=":username" element={<LinkyByUsername />} />
+          <Route path="analytics" element={<Analytics />} />
+        </Routes>
+        <Footer />
+      </BrowserRouter>
+    </div>
   );
 }
 export default App;

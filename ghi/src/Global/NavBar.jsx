@@ -23,7 +23,7 @@ const NavBar = () => {
   return (
     <nav className="sticky top-0 left-0 right-0 z-[100]">
       <div className="px-24 pt-12">
-        <ul className="flex justify-between bg-slate-300 rounded-full p-3">
+        <ul className="flex justify-between bg-white rounded-full p-3">
           <div className="flex">
             <Button asChild variant="ghost">
               <NavLink to="/">Linky</NavLink>
