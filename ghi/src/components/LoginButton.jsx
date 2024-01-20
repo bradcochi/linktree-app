@@ -55,7 +55,10 @@ export default function LoginButton() {
           Log in
         </Button>
       </DialogTrigger>
-      <DialogContent className="sm:max-w-[425px]">
+      <DialogContent
+        className="sm:max-w-[425px]"
+        onClose={() => setOpen(false)}
+      >
         <DialogHeader>
           <DialogTitle>Log in</DialogTitle>
         </DialogHeader>
