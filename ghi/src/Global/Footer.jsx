@@ -1,7 +1,8 @@
 import React from "react";
 import { Link, NavLink } from "react-router-dom";
-import { Button } from "../components/Button";
+import { Button } from "../components/ui/Button";
 import { Code, Github, Gitlab, Linkedin } from "lucide-react";
+import LoginButton from "../components/LoginButton";
 
 const Footer = () => {
   return (
@@ -71,9 +72,7 @@ const Footer = () => {
           </div>
         </div>
         <div className="flex gap-2">
-          <Button variant="secondary" size="lg">
-            Log in
-          </Button>
+          <LoginButton />
 
           <Button
             size="rounded"

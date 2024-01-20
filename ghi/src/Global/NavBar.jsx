@@ -3,7 +3,8 @@ import { NavLink, useNavigate } from "react-router-dom";
 import { useGetAccountQuery, useLogoutMutation } from "../app/apiSlice";
 import LoginForm from "./LoginForm";
 import AlertSuccess from "./AlertSuccess";
-import { Button } from "../components/Button";
+import { Button } from "../components/ui/Button";
+import LoginButton from "../components/LoginButton";
 
 const NavBar = () => {
   const { data: account, isLoading } = useGetAccountQuery();
@@ -76,9 +77,7 @@ const NavBar = () => {
             {!account && (
               <div className="flex gap-2">
                 <li>
-                  <Button variant="secondary" size="lg">
-                    Log in
-                  </Button>
+                  <LoginButton />
                 </li>
                 <li>
                   <Button size="rounded" asChild>
