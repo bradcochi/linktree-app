@@ -38,6 +38,7 @@
     --radius: 0.5rem;
 
     --header-padding: 48px;
+    --header-height: 86px;
   }
 
   .dark {

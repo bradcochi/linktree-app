@@ -3,8 +3,11 @@ import { Link, NavLink } from "react-router-dom";
 import { Button } from "../components/ui/Button";
 import { Code, Github, Gitlab, Linkedin } from "lucide-react";
 import LoginButton from "../components/LoginButton";
+import { useGetAccountQuery } from "../app/apiSlice";
 
 const Footer = () => {
+  const { data: account } = useGetAccountQuery();
+
   return (
     <footer className="bg-[rgb(80,34,116)] p-6">
       <div className="bg-white rounded-2xl p-16 flex flex-col gap-4">
@@ -72,15 +75,18 @@ const Footer = () => {
           </div>
         </div>
         <div className="flex gap-2">
-          <LoginButton />
-
-          <Button
-            size="rounded"
-            asChild
-            className="bg-[rgb(210,232,35)] hover:bg-[rgb(205,224,38)] text-primary"
-          >
-            <NavLink to="signup">Get started for free</NavLink>
-          </Button>
+          {!account && (
+            <>
+              <LoginButton />
+              <Button
+                size="rounded"
+                asChild
+                className="bg-[rgb(210,232,35)] hover:bg-[rgb(205,224,38)] text-primary"
+              >
+                <NavLink to="signup">Get started for free</NavLink>
+              </Button>
+            </>
+          )}
 
           <Button size="rounded" className="p-3">
             <Github size={40} className="mr-2" />

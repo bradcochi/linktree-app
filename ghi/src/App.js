@@ -14,15 +14,13 @@ function App() {
     <div className="bg-[#F3F3F1] ">
       <BrowserRouter>
         <NavBar />
-        <div className="pt-[var(--header-padding)]">
-          <Routes>
-            <Route path="/" element={<HomePage />} />
-            <Route path="signup" element={<SignUp />} />
-            <Route path=":username" element={<LinkyByUsername />} />
-            <Route path="analytics" element={<Analytics />} />
-          </Routes>
-          <Footer />
-        </div>
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="signup" element={<SignUp />} />
+          <Route path=":username" element={<LinkyByUsername />} />
+          <Route path="analytics" element={<Analytics />} />
+        </Routes>
+        <Footer />
       </BrowserRouter>
     </div>
   );

@@ -1,7 +1,6 @@
 import { React, useState } from "react";
 import { NavLink, useNavigate } from "react-router-dom";
 import { useGetAccountQuery, useLogoutMutation } from "../app/apiSlice";
-import LoginForm from "./LoginForm";
 import AlertSuccess from "./AlertSuccess";
 import { Button } from "../components/ui/Button";
 import LoginButton from "../components/LoginButton";
@@ -22,8 +21,8 @@ const NavBar = () => {
   }
 
   return (
-    <nav className="sticky top-0 left-0 right-0 z-[100]">
-      <div className="px-24 pt-[var(--header-padding)]">
+    <nav className="fixed top-0 left-0 right-0 z-[40]">
+      <div className="px-6 pt-[var(--header-padding)]">
         <ul className="flex justify-between items-center bg-white rounded-full p-3 pl-5">
           <div className="flex items-center">
             <NavLink to="/" className="mr-2">
@@ -87,33 +86,6 @@ const NavBar = () => {
               </div>
             )}
           </div>
-          {/* <div
-              id="staticBackdrop"
-              data-bs-backdrop="static"
-              data-bs-keyboard="false"
-              tabIndex="-1"
-              aria-labelledby="staticBackdropLabel"
-              aria-hidden="true"
-            >
-              <div>
-                <div>
-                  <div>
-                    <h1 id="staticBackdropLabel">Login</h1>
-                    <button
-                      type="button"
-                      data-bs-dismiss="modal"
-                      aria-label="Close"
-                    ></button>
-                  </div>
-                  <div>
-                    <div>
-                      {!account && <LoginForm></LoginForm>}
-                      {account && <p>Thanks for logging in!</p>}
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div> */}
         </ul>
       </div>
     </nav>
