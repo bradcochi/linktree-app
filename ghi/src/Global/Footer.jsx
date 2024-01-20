@@ -1,15 +1,19 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import { Button } from "../components/Button";
 import { Code, Github, Gitlab, Linkedin } from "lucide-react";
 
 const Footer = () => {
   return (
     <footer className="bg-[rgb(80,34,116)] p-6">
-      <div className="bg-white rounded-2xl p-16">
+      <div className="bg-white rounded-2xl p-16 flex flex-col gap-4">
+        <p className="text-pretty">
+          This app was made by Brad Cochi and Sara Margulies using FastAPI,
+          React, Redux Toolkit and shadcn/ui
+        </p>
         <div className="flex justify-between">
           <div>
-            <h4>Brad</h4>
+            <h4 className="mb-1">Brad</h4>
             <div className="flex gap-2">
               <Button size="icon" asChild>
                 <Link to="https://github.com/bradcochi/" target="_blank">
@@ -38,7 +42,7 @@ const Footer = () => {
           </div>
 
           <div>
-            <h4 className="text-right">Sara</h4>
+            <h4 className="text-right mb-1">Sara</h4>
             <div className="flex gap-2">
               <Button size="icon" asChild>
                 <Link to="https://github.com/saramargulies" target="_blank">
@@ -66,67 +70,23 @@ const Footer = () => {
             </div>
           </div>
         </div>
+        <div className="flex gap-2">
+          <Button variant="secondary" size="lg">
+            Log in
+          </Button>
 
-        <div>
-          <h5>Linky</h5>
-          <p>
-            This app was made by Brad Cochi and Sara Margulies using FastAPI,
-            React, and Redux Toolkit
-          </p>
-        </div>
-        <div>
-          <h5>Project Information</h5>
-          <ul>
-            <li>
-              <a href="#!">Frequently Asked Questions</a>
-            </li>
-            <li>
-              Brad Cochi's{" "}
-              <Link
-                to="https://www.linkedin.com/in/brad-cochi/"
-                target="_blank"
-              >
-                LinkedIn
-              </Link>{" "}
-              |{" "}
-              <Link to="https://www.bradcochi.com/" target="_blank">
-                Portfolio
-              </Link>{" "}
-              | |{" "}
-              <Link to="https://gitlab.com/bradcochi" target="_blank">
-                Gitlab
-              </Link>
-            </li>
-            <li>
-              Sara Margulies's{" "}
-              <Link
-                to="https://www.linkedin.com/in/sara-margulies/"
-                target="_blank"
-              >
-                LinkedIn
-              </Link>{" "}
-              | <Link to="#!">Portfolio</Link> |{" "}
-              <Link to="https://github.com/saramargulies" target="_blank">
-                Github
-              </Link>{" "}
-              |{" "}
-              <Link to="https://gitlab.com/saramargs" target="_blank">
-                Gitlab
-              </Link>
-            </li>
-          </ul>
-        </div>
-        <div>
-          <h5>Repository</h5>
-          <div>
-            <a
-              href="https://github.com/bradcochi/linktree-app"
-              target="_blank"
-              rel="noreferrer"
-            >
-              Github Repo
-            </a>
-          </div>
+          <Button
+            size="rounded"
+            asChild
+            className="bg-[rgb(210,232,35)] hover:bg-[rgb(205,224,38)] text-primary"
+          >
+            <NavLink to="signup">Get started for free</NavLink>
+          </Button>
+
+          <Button size="rounded" className="p-3">
+            <Github size={40} className="mr-2" />
+            Linky GitHub Repository
+          </Button>
         </div>
       </div>
     </footer>
