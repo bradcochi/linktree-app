@@ -178,3 +178,117 @@
 .masthead-subheading {
   font-size: 1.25rem;
 }
+
+/* IPhoneGraphic */
+
+.viewportWrapper {
+  --width: 324px;
+  --border-radius: 36px;
+  --main-color: #d2e823;
+  --rotateY: 0;
+  --rotateX: 0;
+
+  padding-right: 120px;
+}
+
+.viewport {
+  position: relative;
+  height: 632px;
+  width: var(--width);
+  min-width: var(--width);
+  padding: 16px;
+  background-image: url(https://website.linktr.ee/static/cae7a9d41f00ca6dda861b85c19c3808/d8053/bg.png);
+  background-position: center;
+  background-size: cover;
+  border-radius: var(--border-radius);
+  transform-style: preserve-3d;
+  transform: rotateY(calc(var(--rotateY) * 1deg))
+    rotateX(calc(var(--rotateX) * 1deg));
+  transition: transform 0.1s ease-out;
+}
+
+.avatar {
+  aspect-ratio: 1/1;
+  width: 90px;
+  border-radius: 100%;
+  background-image: url("https://website.linktr.ee/static/17a40f2e38711bf2aff6bfcb586df9c9/3a07d/avatar.jpg");
+  background-position: center;
+  background-size: cover;
+
+  position: absolute;
+  top: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.links {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  transform: translateX(-50%) translateZ(30px);
+
+  position: absolute;
+  top: 35%;
+  left: 50%;
+  width: var(--width);
+  padding: 0 16px;
+}
+
+button {
+  all: unset;
+
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  border-radius: 10000px;
+  background-color: var(--main-color);
+  padding: 18px 26px 20px;
+}
+
+.widget {
+  width: 300px;
+  height: 300px;
+  position: absolute;
+  left: -60%;
+  top: 50%;
+  background-image: url(https://website.linktr.ee/static/2ab2667150b07287700abd260916c57d/b4ad8/widget.png);
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  border-radius: var(--border-radius);
+  transform: translateZ(90px);
+}
+
+.icons {
+  position: absolute;
+  left: 60%;
+  top: 75%;
+  width: 70%;
+  display: flex;
+  gap: 8px;
+  transform: translateZ(60px);
+}
+
+.icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--main-color);
+  border-radius: 100%;
+  aspect-ratio: 1/1;
+  width: 60px;
+}
+
+.item {
+  aspect-ratio: 1/1;
+  width: 300px;
+  background-image: url(https://website.linktr.ee/static/e69ee0d1fbaecacbc756d489648f922a/17f8a/item.png);
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+
+  left: 50%;
+  position: absolute;
+  top: 0;
+  transform: translateZ(-30px);
+}
