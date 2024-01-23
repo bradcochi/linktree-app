@@ -67,7 +67,7 @@ const Footer = () => {
                 </Link>
               </Button>
               <Button size="icon" asChild>
-                <Link to="https://github.com/saramargulies" target="_blank">
+                <Link to="https://www.saramargulies.com/" target="_blank">
                   <Code size={40} />
                 </Link>
               </Button>
