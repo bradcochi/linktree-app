@@ -53,6 +53,8 @@ const Analytics = () => {
     CTR = (sum / clicks) * 100;
   }
 
+  console.log(window.location);
+
   return (
     <>
       <div>

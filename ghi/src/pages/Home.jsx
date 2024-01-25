@@ -7,11 +7,11 @@ import { InfoIcon } from "lucide-react";
 import { Button } from "../components/ui/Button";
 import { useState } from "react";
 import { toast } from "sonner";
+import { Link, NavLink } from "react-router-dom";
 
 const Home = () => {
   const { data: account } = useGetAccountQuery();
   const { data: links, isLoading: linksLoading } = useGetLinksByUserIdQuery();
-  const [successAlert, setSuccessAlert] = useState(false);
 
   if (!account) {
     return <Landing account={account}></Landing>;
@@ -25,8 +25,14 @@ const Home = () => {
       <div className="py-3 px-4 text-sm shadow-inner-bottom-light md:mx-4 md:rounded-lg md:mt-2 md:flex-row flex items-center bg-info-alt justify-between">
         <div className="flex gap-4 items-center">
           <InfoIcon size={16} />
-          Your Linky is live:
+          <div>
+            Your Linky is live:{" "}
+            <NavLink to={`/${account.username}`}>
+              {`${window.location.href}${account.username}`}
+            </NavLink>
+          </div>
         </div>
+
         <div className="flex items-center gap-4">
           Share your Linktree to your socials
           <Button
@@ -34,7 +40,7 @@ const Home = () => {
             variant="white"
             onClick={() => {
               navigator.clipboard.writeText(
-                `http://localhost:3000/${account.username}`
+                `${window.location.href}${account.username}`
               );
               toast.success("Copied to clipboard!");
             }}
