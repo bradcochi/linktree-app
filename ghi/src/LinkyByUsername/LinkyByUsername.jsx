@@ -39,44 +39,41 @@ const LinkyByUsername = () => {
     <>
       <div>
         <div>
-          <div>
-            <h2>@{username}</h2>
-          </div>
-          <table>
-            <tbody>
-              {links.map((link) => {
-                if (!link.locked) {
-                  return (
-                    <tr key={link.link_id}>
-                      <td>
-                        <div
-                          style={{
-                            width: "30rem",
-                          }}
-                        >
+          <h2>@{username}</h2>
+        </div>
+        <table>
+          <tbody>
+            {links.map((link) => {
+              if (!link.locked) {
+                return (
+                  <tr key={link.link_id}>
+                    <td>
+                      <div
+                        style={{
+                          width: "30rem",
+                        }}
+                      >
+                        <div>
                           <div>
-                            <div>
-                              <Link
-                                to={link.link}
-                                target="_blank"
-                                onClick={() => {
-                                  updateCounter(link.link_id, link.counter);
-                                }}
-                              >
-                                {link.name}
-                              </Link>
-                            </div>
+                            <Link
+                              to={link.link}
+                              target="_blank"
+                              onClick={() => {
+                                updateCounter(link.link_id, link.counter);
+                              }}
+                            >
+                              {link.name}
+                            </Link>
                           </div>
                         </div>
-                      </td>
-                    </tr>
-                  );
-                }
-              })}
-            </tbody>
-          </table>
-        </div>
-        <div></div>
+                      </div>
+                    </td>
+                  </tr>
+                );
+              }
+            })}
+          </tbody>
+        </table>
       </div>
     </>
   );

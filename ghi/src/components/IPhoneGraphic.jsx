@@ -40,9 +40,9 @@ export default function IPhoneGraphic() {
         <div className="avatar"></div>
 
         <div className="links">
-          <button>Autumn Collection</button>
-          <button>Latest additions</button>
-          <button>Podcast</button>
+          <button className="phone-button">Autumn Collection</button>
+          <button className="phone-button">Latest additions</button>
+          <button className="phone-button">Podcast</button>
         </div>
 
         <div className="widget"></div>

@@ -1,6 +1,6 @@
 import IPhoneGraphic from "../components/IPhoneGraphic";
 
-const LandingPage = ({ account }) => {
+const Landing = ({ account }) => {
   return (
     <div className="bg-[rgb(37,79,26)] pt-[calc(var(--header-padding)*2+var(--header-height))] px-6 pb-36">
       <div className="flex gap-36 items-center">
@@ -21,4 +21,4 @@ const LandingPage = ({ account }) => {
   );
 };
 
-export default LandingPage;
+export default Landing;
